@@ -13,4 +13,9 @@ class Author extends Model
     {
         return $this->hasMany(Book::class);
     }
+
+    public function profile()
+    {
+        return $this->hasOne(AuthorProfile::class);
+    }
 }

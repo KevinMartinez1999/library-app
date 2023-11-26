@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\BooksController;
+use App\Models\Author;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,5 +14,11 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
+Route::get('test-relations', function () {
+    $author = Author::find(1);
+    // return $author->profile;
+    return $author->books;
+});
 
 Route::get('/', [BooksController::class, 'index']);
