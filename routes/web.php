@@ -17,8 +17,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('test-relations', function () {
     $author = Author::find(1);
+    return $author->editorials->first()->authors;
+    // return $author->editorials;
     // return $author->profile;
-    return $author->books;
+    // return $author->books;
 });
 
 Route::get('/', [BooksController::class, 'index']);

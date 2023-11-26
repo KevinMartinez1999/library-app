@@ -18,4 +18,9 @@ class Author extends Model
     {
         return $this->hasOne(AuthorProfile::class);
     }
+
+    public function editorials()
+    {
+        return $this->belongsToMany(Editorial::class);
+    }
 }
